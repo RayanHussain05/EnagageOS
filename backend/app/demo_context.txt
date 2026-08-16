@@ -1,0 +1,168 @@
+COMP1860 Building our Digital World: Computer Systems & Architecture
+S1.W1.L1: Computer Architecture & History of Computing
+Dr James Dyer
+
+Learning Outcomes
+- Recognise the contributions of individuals and organisations in the computing field.
+- Explain trends in the history of the computing field.
+- Describe the basic building blocks of computers and their role in the historical development of computer architecture.
+
+Textbook
+- Stallings, Computer Organisation & Architecture, Chapter 1 (sections 1.1, 1.2, 1.3 up to Transistors)
+
+Overview
+- Architecture and Organisation
+- Computer Structure
+- History of Computer Hardware
+- Von Neumann Architecture
+
+What is a computer?
+- A machine that automatically carries out sequences of arithmetic or logical operations.
+- Can be programmed to do so.
+
+Architecture vs Organisation
+Architecture (logical design)
+- Attributes visible to the programmer.
+- Instruction set.
+- Number of bits used to represent data types.
+- I/O mechanisms.
+- Techniques for addressing memory.
+- Direct impact on logical execution of programs.
+- Example: is there a multiply instruction?
+
+Organisation (physical implementation)
+- Control signals and interfaces between computer and peripherals.
+- Memory technology used.
+- How components are built using electronics.
+- How components are arranged and connected in a chip or on a circuit board.
+- Example: is there a hardware multiply unit or is it done by repeated addition?
+
+Architecture Families
+- Companies design families of computers sharing the same basic architecture (e.g., Intel x86, ARM64).
+- Enables code compatibility (backwards compatibility).
+- Organisation differs between versions.
+
+Computer Structure
+Structure and Function
+- Structure: how components relate to each other.
+- Function: the operation of individual components as part of the structure.
+
+Four Basic Computer Functions
+- Data processing: wide variety of forms and processing requirements.
+- Data storage: short-term and long-term.
+- Data movement:
+  - I/O: data to or from directly connected peripherals.
+  - Data communications: data moved over longer distances to remote devices.
+- Control: control unit manages resources and orchestrates functional parts in response to instructions.
+
+Hierarchical Structure
+- Computers are complex systems (e.g., x86 manual ~5000 pages).
+- We use hierarchical abstraction: each level is a set of components and their interrelationships.
+- Behavior at each level depends on an abstracted view of the level below.
+
+Computer Components
+- CPU: controls hardware, interprets and executes instructions.
+- Main memory: stores data and program instructions.
+- Input/Output: hardware for interacting with users and devices (display, keyboard, printer, network interface).
+  - Captures input signal as data.
+  - Converts output data to signals hardware understands.
+- System bus: connects CPU, main memory, and I/O.
+- Co-processors: specialized operations (e.g., GPU for graphics; cryptoprocessor for cryptography).
+
+CPU Components
+- Control Unit: controls the operation of the CPU and the computer.
+- Arithmetic and Logic Unit (ALU): performs data processing.
+- Registers: internal CPU storage.
+- CPU interconnection: communication among control unit, ALU, and registers.
+
+Multicore Concepts
+- CPU: fetches and executes instructions; consists of ALU, control unit, and registers.
+- Core: individual processing unit on a processor chip; equivalent to a CPU in single-CPU systems.
+- Processor: physical silicon containing one or more cores; a multicore processor has multiple cores.
+
+History of Computer Hardware (Part 1)
+Early Devices
+- Mechanical computing devices (gears, decimal), e.g., Babbage's Analytical Engine.
+
+Shift to Electrical/Electronic (1930s-1940s)
+- Electrical relays.
+- Thermionic valves (electronic).
+
+Why switches?
+- Two states (open/closed) map to true/false for Boolean logic.
+- Enables binary arithmetic and binary data storage.
+
+First Digital Computers (1930s-1940s)
+- Z3: electrical.
+- Colossus: electronic (valves), used by Bletchley Park.
+- ENIAC: electronic (valves), used for Manhattan Project simulations.
+
+Stored Program Computer
+- IAS machine: stored program concept (John von Neumann).
+- First publication: 1945 EDVAC report.
+- EDVAC completed in 1952.
+- Prototype of modern general-purpose computers (von Neumann architecture).
+- Instructions stored as data in memory or read from I/O.
+
+Von Neumann Architecture
+Four linked components:
+- Main memory stores programs and data.
+- ALU operates on binary data.
+- Control unit interprets and executes instructions.
+- Input/output equipment operated by the control unit.
+
+Registers
+- MAR (Memory Address Register): address of word to read/write.
+- MDR (Memory Data Register): word to store or send to I/O; or receive from memory or I/O.
+- CIR (Current Instruction Register): opcode of instruction being executed.
+- PC (Program Counter): address of next instruction to fetch.
+- AC (Accumulator): holds operands and results of ALU operations.
+
+Addresses
+- Addresses index locations in memory.
+- Most modern computers are byte-addressable.
+- CPU sees memory as a linear sequence of bytes.
+
+Instructions
+- Opcode: operation to perform.
+- Operands: data for instruction or address to use.
+- Instruction types:
+  - Data handling (set register, copy from memory, read/write I/O).
+  - Arithmetic and logic.
+  - Control flow.
+
+Fetch-Decode-Execute Cycle
+- Fetch instruction from memory into IR.
+- Decode opcode.
+- Execute operation.
+- PC holds address of next instruction and is incremented after each fetch.
+
+Von Neumann Bottleneck
+- Single shared bus for data and instructions.
+- Limits throughput between CPU and memory; CPU must wait on memory transfers.
+
+Harvard Architecture
+- Two buses from memory to CPU (instructions and data).
+- Harvard Mark 1 (1944) could read instructions and data simultaneously from punch cards.
+- Advantages: CPU gets instruction and data concurrently.
+- Disadvantages: programs and data cannot share same memory.
+- Modern uses: microcontrollers, digital signal processors.
+
+Von Neumann Bottleneck Mitigations
+- Cache between CPU and main memory.
+- Separate caches/access paths for data and instructions (Modified Harvard).
+- Branch prediction algorithms and logic.
+- On-chip scratchpad memory.
+- System on chip (CPU + memory) to reduce latency.
+
+Activity
+- Identify figures in photos.
+  - Left: someone frequently discussed in lecture.
+  - Right: worked with someone mentioned at the start of hardware history.
+  - Middle: designed a famous UK computer used during WWII.
+
+Summary
+- Architecture and Organisation.
+- Computer Structure.
+- History of Computer Hardware.
+- Von Neumann Architecture.
